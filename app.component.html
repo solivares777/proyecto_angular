@@ -1,0 +1,48 @@
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Calcular Renta</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">No Nit:</label>
+          <input [(ngModel)]="renta.noNit" name="noNit" type="text" class="form-control"
+            onblur='this.value=this.value.toUpperCase();'>
+        </div>
+
+        <div class="form-group">
+          <label for="">Contribuyente:</label>
+          <input [(ngModel)]="renta.contribuyente" name="contribuyente" type="text" class="form-control"
+            onblur='this.value=this.value.toLowerCase();'>
+        </div>
+
+        <div class="form-group">
+          <label for="">Salario Mensual:</label>
+          <input [(ngModel)]="renta.salarioMensual" name="salarioMensual" type="text" class="form-control"
+            onblur='this.value=this.value.toLowerCase();'>
+        </div>
+
+        <br>
+        <button (click)="Guardar(renta)" class="btn btn-danger">Calcular Renta</button>
+        
+      </form>        
+      Saludos
+      <h2>
+        El valor del salario es: {{renta.salarioMensual}}
+        <br>
+        El valor del isss es: {{renta.isss}}
+        <br>
+        El valor de la afp es: {{renta.afp}}
+        <br>
+        El valor de la renta es: {{renta.calculoRenta}}
+        <br>
+       </h2>
+       
+      El valor del salario liquido es: {{ renta.salarioLiquido}}
+    </div>
+  </div>
+</div>
+
+<br>
+<a href="javascript:location.reload(true)">Refrescar Pagina</a>
